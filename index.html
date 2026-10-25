@@ -781,6 +781,49 @@ input,select,textarea{max-width:100%;min-width:0}
 @media(max-width:740px){.profile-menu{right:0;top:calc(100% + 8px);max-height:min(70vh,580px);overflow-y:auto}.general-settings-tabs button{font-size:10px;padding:10px 5px}}
 </style>
 
+<style id="estante-settings-organization">
+.modal.settings-modal{width:min(780px,100%);max-height:min(90vh,900px);padding:clamp(18px,3vw,28px)}
+.settings-modal .modal-head{margin-bottom:16px}
+.settings-modal .modal-head h2{font-size:22px;letter-spacing:-.7px}
+.general-settings-intro{font-size:12px;line-height:1.65;margin:0 0 17px;padding:14px 16px;border:1px solid color-mix(in srgb,var(--ui-accent,var(--purple)) 25%,var(--ui-border,var(--line)));border-radius:13px;background:linear-gradient(115deg,color-mix(in srgb,var(--ui-accent,var(--purple)) 12%,transparent),color-mix(in srgb,var(--ui-panel,var(--panel)) 70%,transparent));}
+.general-settings-tabs{gap:8px;padding:5px;margin-bottom:16px;background:var(--ui-field,#101019)}
+.general-settings-tabs button{min-height:42px;font-size:12px;transition:background .16s,border-color .16s,color .16s}
+.general-settings-tabs button:hover{color:var(--ui-text,var(--text));background:color-mix(in srgb,var(--ui-soft,var(--panel)) 65%,transparent)}
+.general-settings-tabs button[aria-pressed="true"]{box-shadow:0 3px 12px #0003}
+.settings-panel{display:grid;gap:12px}
+.settings-section{padding:18px;border:1px solid var(--ui-border,var(--line));border-radius:15px;background:linear-gradient(145deg,color-mix(in srgb,var(--ui-panel,var(--panel)) 80%,transparent),color-mix(in srgb,var(--ui-panel2,#171722) 78%,transparent))}
+.settings-section:first-child{padding-top:18px;border-top:1px solid var(--ui-border,var(--line))}
+.settings-section h3{font-size:15px;letter-spacing:-.2px;margin:0 0 6px}
+.settings-section>p{font-size:11px;line-height:1.65;margin:0 0 15px;max-width:680px}
+.settings-section .field{margin-bottom:12px}
+.settings-section .field:last-of-type{margin-bottom:14px}
+.settings-section .field label{font-size:11px}
+.settings-section .field input{min-height:42px;font-size:12px}
+.settings-section>p a{font-size:11px;font-weight:750}
+.settings-section .settings-warning{margin-top:14px}
+.theme-choice-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.theme-choice{min-height:70px;padding:11px;gap:10px}
+.theme-choice strong{font-size:11px}
+.theme-choice small{font-size:10px;line-height:1.4}
+.settings-inline-actions{gap:8px}
+.settings-inline-actions button{min-height:38px}
+.settings-status{flex-basis:100%;padding-top:3px}
+.profile-menu{width:min(350px,calc(100vw - 28px));padding:10px}
+.profile-menu-heading{display:grid;grid-template-columns:42px minmax(0,1fr);column-gap:11px;align-items:center;padding:10px 9px 14px;margin-bottom:9px}
+.profile-menu-avatar{grid-column:1;grid-row:1/3;width:42px;height:42px;display:grid;place-items:center;overflow:hidden;border-radius:13px;background:linear-gradient(135deg,var(--ui-accent,var(--purple)),var(--pink));color:white;font-size:13px;font-weight:900}
+.profile-menu-avatar img{width:100%;height:100%;object-fit:cover}
+.profile-menu-heading>span:not(.profile-menu-avatar){grid-column:2;align-self:end}
+.profile-menu-heading strong{grid-column:2;margin-top:3px;font-size:14px}
+.profile-menu-heading small{grid-column:2;margin-top:4px}
+.profile-menu-group-label{padding:9px 10px 4px;color:var(--ui-muted,var(--muted));font-size:9px;font-weight:850;letter-spacing:1.2px;text-transform:uppercase}
+.profile-menu-group+.profile-menu-group{border-top:1px solid var(--ui-border,var(--line));margin-top:6px;padding-top:4px}
+.profile-menu-item{padding:9px 10px}
+.profile-menu-item>span:first-child{width:30px;height:30px}
+.profile-menu-item strong{font-size:12px}
+.profile-menu-item small{font-size:10px}
+@media(max-width:600px){.modal.settings-modal{padding:17px}.general-settings-intro{padding:12px}.settings-section{padding:15px}.settings-section:first-child{padding-top:15px}.theme-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.theme-choice{min-height:66px}.settings-inline-actions button{flex:1 1 auto}.settings-modal .modal-actions{position:sticky;bottom:-17px;padding:12px 0 0;background:linear-gradient(transparent,var(--ui-panel2,#171722) 24%);}}
+</style>
+
 
 <style id="wishlist-image-support">
 .wishlist-cover.has-image{background:#0d1424;border-color:#ffffff22}
@@ -2209,6 +2252,7 @@ function openGeneralSettings(initialTab='appearance'){
   const modal=document.querySelector('#modalBackdrop');
   const form=document.querySelector('#editorForm');
   if(!modal||!form)return;
+  modal.querySelector('.modal')?.classList.add('settings-modal');
   const themes=[
     {id:'default',name:'Retrô roxo',desc:'A identidade original da Estante',colors:['#a855f7','#ff3fa4','#28d9e8']},
     {id:'red',name:'Vermelho cereja',desc:'Vermelho e vinho',colors:['#e83b5d','#ad152f','#f7a0af']},
@@ -2221,14 +2265,14 @@ function openGeneralSettings(initialTab='appearance'){
   form.onsubmit=e=>e.preventDefault();
   document.querySelector('#modalTitle').textContent='Configurações gerais';
   form.innerHTML=`
-    <p class="general-settings-intro">Personalize a Estante e configure as integrações sem sair deste menu. As chaves ficam guardadas apenas neste navegador; não use chaves secretas de servidor.</p>
+    <p class="general-settings-intro">Ajuste a aparência da Estante e conecte seus serviços. As chaves são guardadas apenas neste navegador; nunca use chaves secretas de servidor.</p>
     <div class="general-settings-tabs" role="tablist" aria-label="Seções das configurações"><button type="button" data-settings-tab="appearance" role="tab" aria-pressed="true">Interface e temas</button><button type="button" data-settings-tab="apis" role="tab" aria-pressed="false">APIs e integrações</button></div>
     <div class="settings-panel" data-settings-panel="appearance" role="tabpanel">
-      <section class="settings-section"><h3>Identidade visual</h3><p>O tema muda os painéis, a navegação, os botões e os formulários. As capas e artes originais dos jogos não são alteradas.</p><div class="theme-choice-grid">${themes.map(t=>`<button type="button" class="theme-choice" data-theme-choice="${t.id}" aria-pressed="${t.id===currentTheme?'true':'false'}"><span class="theme-swatches">${t.colors.map(c=>`<i style="background:${c}"></i>`).join('')}</span><span><strong>${t.name}</strong><small>${t.desc}</small></span></button>`).join('')}</div><div class="settings-status" id="generalThemeStatus" role="status">O tema selecionado é salvo automaticamente neste navegador.</div></section>
+      <section class="settings-section"><h3>Aparência</h3><p>Escolha um tema para atualizar os painéis, a navegação, os botões e os formulários. As capas dos jogos permanecem iguais.</p><div class="theme-choice-grid">${themes.map(t=>`<button type="button" class="theme-choice" data-theme-choice="${t.id}" aria-pressed="${t.id===currentTheme?'true':'false'}"><span class="theme-swatches">${t.colors.map(c=>`<i style="background:${c}"></i>`).join('')}</span><span><strong>${t.name}</strong><small>${t.desc}</small></span></button>`).join('')}</div><div class="settings-status" id="generalThemeStatus" role="status">O tema selecionado é salvo automaticamente neste navegador.</div></section>
     </div>
     <div class="settings-panel" data-settings-panel="apis" role="tabpanel" hidden>
-      <section class="settings-section" id="generalSgdbSection"><h3>SteamGridDB</h3><p>Busca nomes e capas de jogos e artes relacionadas para consoles. A chave fica neste navegador e é usada apenas nas chamadas à API.</p><div class="field"><label for="generalSgdbApiKey">Chave da API</label><input id="generalSgdbApiKey" type="password" autocomplete="off" spellcheck="false" placeholder="Cole sua chave pública da SteamGridDB" value="${esc(steamGridDbKey||'')}"></div><p><a href="https://www.steamgriddb.com/profile/preferences" target="_blank" rel="noopener noreferrer">Abrir preferências do SteamGridDB ↗</a></p><div class="settings-inline-actions"><button class="secondary" type="button" id="generalSgdbTest">Testar conexão</button><button class="secondary" type="button" id="generalSgdbRemove">Remover chave</button><button class="primary" type="button" id="generalSgdbSave">Salvar chave</button><span class="settings-status" id="generalSgdbStatus" role="status"></span></div></section>
-      <section class="settings-section" id="generalSupabaseSection"><h3>Supabase · nuvem entre dispositivos</h3><p>Essas informações conectam o site ao projeto Supabase usado para login e sincronização. Use somente a URL do projeto e a chave pública <em>anon</em>/<em>publishable</em>; nunca use <code>service_role</code> ou segredo privado.</p><div class="field"><label for="generalCloudUrl">URL do projeto</label><input id="generalCloudUrl" type="url" autocomplete="url" placeholder="https://seu-projeto.supabase.co" value="${esc(cloudConfig.url||'')}"></div><div class="field"><label for="generalCloudAnon">Chave pública (anon / publishable)</label><input id="generalCloudAnon" type="password" autocomplete="off" placeholder="sb_publishable_... ou anon key" value="${esc(cloudConfig.anonKey||'')}"></div><div class="settings-inline-actions"><button class="primary" type="button" id="generalCloudSave">Salvar integração</button><span class="settings-status" id="generalCloudStatus" role="status">${cloudHasConfig()?'Projeto Supabase configurado neste navegador.':'Configure o projeto para habilitar a nuvem.'}</span></div><div class="settings-warning">Depois de salvar, abra o menu do perfil → <strong>Nuvem e sincronização</strong> para entrar/criar conta. O projeto precisa ter a tabela <code>estante_cloud_data</code> e as políticas RLS; o pacote inclui o SQL de instalação.</div></section>
+      <section class="settings-section" id="generalSgdbSection"><h3>SteamGridDB</h3><p>Use a chave para buscar jogos e escolher capas. Ela fica salva neste navegador e só é enviada nas chamadas à SteamGridDB.</p><div class="field"><label for="generalSgdbApiKey">Chave da API</label><input id="generalSgdbApiKey" type="password" autocomplete="off" spellcheck="false" placeholder="Cole sua chave pública da SteamGridDB" value="${esc(steamGridDbKey||'')}"></div><p><a href="https://www.steamgriddb.com/profile/preferences" target="_blank" rel="noopener noreferrer">Abrir preferências do SteamGridDB ↗</a></p><div class="settings-inline-actions"><button class="secondary" type="button" id="generalSgdbTest">Testar conexão</button><button class="secondary" type="button" id="generalSgdbRemove">Remover chave</button><button class="primary" type="button" id="generalSgdbSave">Salvar chave</button><span class="settings-status" id="generalSgdbStatus" role="status"></span></div></section>
+      <section class="settings-section" id="generalSupabaseSection"><h3>Supabase · nuvem entre dispositivos</h3><p>Conecte um projeto para entrar e sincronizar a coleção no computador e no celular. Use a URL do projeto e apenas a chave pública <em>anon</em>/<em>publishable</em>.</p><div class="field"><label for="generalCloudUrl">URL do projeto</label><input id="generalCloudUrl" type="url" autocomplete="url" placeholder="https://seu-projeto.supabase.co" value="${esc(cloudConfig.url||'')}"></div><div class="field"><label for="generalCloudAnon">Chave pública (anon / publishable)</label><input id="generalCloudAnon" type="password" autocomplete="off" placeholder="sb_publishable_... ou anon key" value="${esc(cloudConfig.anonKey||'')}"></div><div class="settings-inline-actions"><button class="primary" type="button" id="generalCloudSave">Salvar integração</button><span class="settings-status" id="generalCloudStatus" role="status">${cloudHasConfig()?'Projeto Supabase configurado neste navegador.':'Configure o projeto para habilitar a nuvem.'}</span></div><div class="settings-warning">Após salvar, use <strong>Nuvem e sincronização</strong> no menu do perfil para entrar ou criar uma conta. O projeto precisa da tabela <code>estante_cloud_data</code> com políticas RLS. Nunca use a chave <code>service_role</code> aqui.</div></section>
     </div>
     <div class="modal-actions"><button type="button" class="secondary" id="generalSettingsClose">Fechar</button></div>`;
   modal.classList.add('open');
@@ -2270,7 +2314,7 @@ function openGeneralSettings(initialTab='appearance'){
       updateProfileMenuSummary();
     }catch(e){if(cloudStatus){cloudStatus.className='settings-status error';cloudStatus.textContent=e?.message||'Não foi possível salvar a integração.';}}
   };
-  document.querySelector('#generalSettingsClose').onclick=()=>modal.classList.remove('open');
+  document.querySelector('#generalSettingsClose').onclick=()=>{modal.classList.remove('open');modal.querySelector('.modal')?.classList.remove('settings-modal');};
   chooseTab(initialTab==='apis'?'apis':'appearance');
 }
 function openThemeSettings(){openGeneralSettings('appearance')}
@@ -2299,6 +2343,13 @@ function estanteStoreCloudConfig(urlValue,keyValue){
   return true;
 }
 function updateProfileMenuSummary(){
+  organizeProfileMenu();
+  const avatar=document.querySelector('#profileMenuAvatar');
+  if(avatar){
+    avatar.replaceChildren();
+    if(profile?.avatarImage){const image=document.createElement('img');image.src=profile.avatarImage;image.alt='';avatar.append(image);}
+    else avatar.textContent=profileInitials();
+  }
   const name=document.querySelector('#profileMenuName');
   if(name)name.textContent=String(profile?.nickname||profile?.displayName||'Minha coleção').trim()||'Minha coleção';
   const status=document.querySelector('#profileMenuCloudStatus');
@@ -2308,6 +2359,28 @@ function updateProfileMenuSummary(){
     else status.textContent='Nuvem não configurada';
   }
 }
+function organizeProfileMenu(){
+  const menu=document.querySelector('#profileMenu');
+  if(!menu||menu.dataset.organized==='true')return;
+  const heading=menu.querySelector('.profile-menu-heading');
+  if(heading&&!heading.querySelector('.profile-menu-avatar')){
+    const avatar=document.createElement('span');avatar.id='profileMenuAvatar';avatar.className='profile-menu-avatar';avatar.setAttribute('aria-hidden','true');
+    heading.prepend(avatar);
+  }
+  const groups=[
+    {label:'Perfil',ids:['profileMenuOpen','profileMenuManage']},
+    {label:'Dados e sincronização',ids:['cloudLoginButton']},
+    {label:'Preferências',ids:['profileMenuSettings']}
+  ];
+  groups.forEach(({label,ids})=>{
+    const items=ids.map(id=>document.getElementById(id)).filter(Boolean);
+    if(!items.length)return;
+    const group=document.createElement('div');group.className='profile-menu-group';
+    const title=document.createElement('div');title.className='profile-menu-group-label';title.textContent=label;group.append(title);
+    items.forEach(item=>group.append(item));menu.append(group);
+  });
+  menu.dataset.organized='true';
+}
 function closeProfileMenu(){const menu=document.querySelector('#profileMenu');const trigger=document.querySelector('#profileButton');if(menu)menu.hidden=true;if(trigger)trigger.setAttribute('aria-expanded','false');}
 function toggleProfileMenu(){
   const menu=document.querySelector('#profileMenu');const trigger=document.querySelector('#profileButton');if(!menu||!trigger)return;
@@ -2315,6 +2388,11 @@ function toggleProfileMenu(){
 }
 function openProfileMenuAction(action){closeProfileMenu();if(typeof action==='function')action();}
 (function wireEstanteGeneralSettings(){
+  const settingsModal=document.querySelector('#modalBackdrop');
+  const settingsDialog=settingsModal?.querySelector('.modal');
+  document.querySelector('#modalClose')?.addEventListener('click',()=>settingsDialog?.classList.remove('settings-modal'));
+  settingsModal?.addEventListener('click',event=>{if(event.target===settingsModal)settingsDialog?.classList.remove('settings-modal');});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')settingsDialog?.classList.remove('settings-modal');});
   const gear=document.querySelector('#generalSettings');if(gear)gear.addEventListener('click',()=>{closeProfileMenu();openGeneralSettings('appearance')});
   const profileButton=document.querySelector('#profileButton');if(profileButton)profileButton.onclick=toggleProfileMenu;
   const profileOpen=document.querySelector('#profileMenuOpen');if(profileOpen)profileOpen.onclick=()=>openProfileMenuAction(openProfileSettings);
