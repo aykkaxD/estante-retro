@@ -1,0 +1,44 @@
+# Estante Retro
+
+Aplicação web de arquivo de jogos e consoles, baseada no HTML oficial fornecido. A coleção local, perfis, wishlist, fichas, progresso, acessórios, backups e importação/exportação permanecem no site. As conexões externas são opcionais.
+
+## Abrir e usar
+
+- Abra `index.html` em um navegador moderno para usar a coleção local. Os dados permanecem no armazenamento desse navegador.
+- O botão **＋ Adicionar jogo** no topo e a ação principal da página continuam disponíveis conforme a seção selecionada. Se ainda não houver console, o fluxo pede para cadastrar uma plataforma primeiro.
+- O menu do avatar reúne **Meu perfil**, **Trocar ou gerenciar perfis** e **Nuvem e sincronização**.
+- O botão **⚙ Configurações gerais** abre os temas e a área de APIs. A escolha de tema é salva no navegador.
+- Na **Wishlist**, cada jogo aceita uma capa própria por upload (a imagem é otimizada antes de salvar) ou uma arte escolhida na SteamGridDB. Use **Editar → Capa do jogo** para trocar/remover a imagem; a capa também acompanha o jogo ao movê-lo para a coleção.
+
+## SteamGridDB no computador
+
+1. Instale Node.js 18.17 ou superior: <https://nodejs.org/>.
+2. Dê dois cliques em `INICIAR_STEAMGRIDDB.bat` e mantenha a janela aberta enquanto busca nomes ou capas.
+3. No site, abra **Configurações gerais → APIs e integrações**, insira sua chave em SteamGridDB e salve. O teste de conexão está no mesmo painel.
+4. A chave fica no armazenamento local do navegador, não no HTML nem nos dados exportados.
+
+O auxiliar escuta apenas em `127.0.0.1:3210`, não possui dependências npm e só encaminha duas rotas permitidas da SteamGridDB: busca por autocomplete e artes de jogos. Não registra a chave em logs.
+
+## Hospedar com Netlify
+
+O pacote inclui `netlify.toml` e `netlify/functions/steamgriddb.js`. Publique a pasta inteira como projeto Netlify (por repositório ou CLI); não envie apenas `index.html`, pois a função é necessária para chamadas SteamGridDB a partir do site hospedado. A função usa a chave da SteamGridDB enviada pelo navegador e restringe os caminhos consultáveis.
+
+O HTML carrega o SDK do Supabase por CDN, portanto o login exige internet. O pacote não contém credenciais de projeto e não cria automaticamente uma conta Supabase.
+
+## Nuvem entre computador e celular (Supabase opcional)
+
+1. Crie um projeto Supabase: <https://supabase.com/>.
+2. No SQL Editor do projeto, execute `corrigir_estante_cloud.sql`. Ele cria a tabela e ativa políticas RLS para que cada pessoa só acesse seus próprios dados.
+3. Em **Configurações gerais → APIs e integrações**, preencha a URL do projeto e a chave pública `anon`/`publishable`. **Nunca** use uma chave `service_role` ou outro segredo privado no navegador.
+4. Abra o avatar → **Nuvem e sincronização** para criar conta ou entrar com a mesma conta nos dispositivos.
+5. Para confirmação por e-mail e login Google, configure os URLs de retorno e o provedor Google em Authentication nas configurações do projeto Supabase.
+
+A nuvem é opcional; sem configurar um projeto e aplicar o SQL, o site continua funcionando localmente. Credenciais de projeto Supabase não vêm incluídas neste pacote.
+
+## Conteúdo do pacote
+
+- `index.html` — site completo e funcional.
+- `api-server.js` e `INICIAR_STEAMGRIDDB.bat` — auxiliar local SteamGridDB.
+- `netlify/functions/steamgriddb.js` e `netlify.toml` — função para hospedagem Netlify.
+- `corrigir_estante_cloud.sql` — estrutura RLS para sincronização Supabase.
+- `package.json` — script e requisito de Node.js (sem dependências extras).
