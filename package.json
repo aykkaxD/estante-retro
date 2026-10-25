@@ -1,0 +1,12 @@
+{
+  "name": "estante-retro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Estante Retro — coleção retrô com integração opcional SteamGridDB e Supabase",
+  "scripts": {
+    "start:steamgriddb": "node api-server.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}
