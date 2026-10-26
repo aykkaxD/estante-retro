@@ -23,17 +23,13 @@ O auxiliar escuta apenas em `127.0.0.1:3210`, não possui dependências npm e s�
 
 O pacote inclui `netlify.toml` e `netlify/functions/steamgriddb.js`. Publique a pasta inteira como projeto Netlify (por repositório ou CLI); não envie apenas `index.html`, pois a função é necessária para chamadas SteamGridDB a partir do site hospedado. A função usa a chave da SteamGridDB enviada pelo navegador e restringe os caminhos consultáveis.
 
-O HTML carrega o SDK do Supabase por CDN, portanto o login exige internet. O pacote não contém credenciais de projeto e não cria automaticamente uma conta Supabase.
+O HTML carrega o SDK do Supabase por CDN, portanto o login exige internet. A configuração pública do projeto Supabase é mantida pelo site; visitantes não precisam criar um projeto nem copiar chaves.
 
-## Nuvem entre computador e celular (Supabase opcional)
+## Nuvem entre computador e celular
 
-1. Crie um projeto Supabase: <https://supabase.com/>.
-2. No SQL Editor do projeto, execute `corrigir_estante_cloud.sql`. Ele cria a tabela e ativa políticas RLS para que cada pessoa só acesse seus próprios dados.
-3. Em **Configurações gerais → APIs e integrações**, preencha a URL do projeto e a chave pública `anon`/`publishable`. **Nunca** use uma chave `service_role` ou outro segredo privado no navegador.
-4. Abra o avatar → **Nuvem e sincronização** para criar conta ou entrar com a mesma conta nos dispositivos.
-5. Para confirmação por e-mail e login Google, configure os URLs de retorno e o provedor Google em Authentication nas configurações do projeto Supabase.
+Abra o avatar → **Nuvem e sincronização** para criar uma conta com e-mail e senha ou entrar com a mesma conta em cada dispositivo. Não é preciso obter chaves, criar um projeto Supabase ou configurar integrações. Sem login, a coleção continua salva localmente no navegador.
 
-A nuvem é opcional; sem configurar um projeto e aplicar o SQL, o site continua funcionando localmente. Credenciais de projeto Supabase não vêm incluídas neste pacote.
+Na primeira comparação, se os dados locais e da nuvem forem diferentes, a Estante pergunta qual versão manter. Alterações simultâneas entre dispositivos também são detectadas por revisão; nenhuma versão é substituída sem uma escolha explícita. O script `corrigir_estante_cloud.sql` descreve a tabela protegida por RLS e a função de gravação condicional usada pelo site.
 
 ## Conteúdo do pacote
 

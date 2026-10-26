@@ -743,8 +743,8 @@ input,select,textarea{max-width:100%;min-width:0}
 }
 </style>
 <style id="cloud-auth-redesign">
-.cloud-auth-intro{margin-bottom:17px;color:var(--muted);font-size:12px;line-height:1.65}.cloud-auth-current{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid #343448;border-radius:12px;background:#11111a;margin:12px 0 17px;font-size:12px}.cloud-auth-dot{width:8px;height:8px;border-radius:50%;background:#c7f464;box-shadow:0 0 12px #c7f46455;flex:none}.cloud-auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}.cloud-auth-actions button{min-height:43px}.cloud-google{width:100%;min-height:44px;display:flex;justify-content:center;align-items:center;gap:10px;border:1px solid #444456;background:#f7f7f8;color:#202124;border-radius:11px;font-size:12px;font-weight:800;margin-top:13px}.cloud-google:hover{background:#fff}.cloud-google-mark{display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 25% 48%,#fbbc05 48% 70%,#ea4335 70% 87%,#4285f4 87%);color:white;font-size:13px;font-weight:900;text-shadow:0 1px 2px #0004}.cloud-or{display:flex;align-items:center;gap:12px;margin:16px 0 3px;color:#77768c;font-size:10px}.cloud-or:before,.cloud-or:after{content:"";height:1px;background:#343448;flex:1}.cloud-config{margin-top:19px;border-top:1px solid #303043;padding-top:13px}.cloud-config summary{cursor:pointer;color:#a8a7bb;font-size:11px;font-weight:750;padding:5px 0}.cloud-config .form-hint{margin:9px 0 12px;line-height:1.6}.cloud-message{padding:11px 12px;border-radius:10px;border:1px solid #39394c;background:#11111a;color:#c7c6d6;font-size:11px;line-height:1.65;margin:12px 0 4px;overflow-wrap:anywhere}.cloud-message.success{border-color:#50613c;background:#171d14;color:#d7efbd}.cloud-message.error{border-color:#704051;background:#21141b;color:#ffc4d5}.cloud-setup-note{font-size:10px;color:#85849a;line-height:1.6;margin:12px 0 0}.cloud-config .field{margin-top:12px}.cloud-config input{width:100%}.cloud-session-actions{display:flex;gap:8px;margin-top:14px}.cloud-session-actions button{flex:1}.cloud-google-help{font-size:10px;color:#8b8aa0;line-height:1.55;margin-top:10px}.cloud-auth-actions .primary,.cloud-auth-actions .secondary{white-space:normal}
-@media(max-width:480px){.cloud-auth-actions{grid-template-columns:1fr}.cloud-auth-actions button{width:100%}}
+.cloud-auth-intro{margin-bottom:17px;color:var(--muted);font-size:12px;line-height:1.65}.cloud-auth-current{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid #343448;border-radius:12px;background:#11111a;margin:12px 0 17px;font-size:12px}.cloud-auth-dot{width:8px;height:8px;border-radius:50%;background:#c7f464;box-shadow:0 0 12px #c7f46455;flex:none}.cloud-auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}.cloud-auth-actions button{min-height:43px}.cloud-message{padding:11px 12px;border-radius:10px;border:1px solid #39394c;background:#11111a;color:#c7c6d6;font-size:11px;line-height:1.65;margin:12px 0 4px;overflow-wrap:anywhere}.cloud-message.success{border-color:#50613c;background:#171d14;color:#d7efbd}.cloud-message.error{border-color:#704051;background:#21141b;color:#ffc4d5}.cloud-session-actions{display:flex;gap:8px;margin-top:14px}.cloud-session-actions button{flex:1}.cloud-conflict{margin-top:16px;padding:14px;border:1px solid #966e32;border-radius:12px;background:#211a12}.cloud-conflict h3{margin:0 0 7px;font-size:13px}.cloud-conflict p{margin:0;color:#c2b49c;font-size:11px;line-height:1.55}.cloud-conflict>div{display:flex;gap:8px;margin-top:13px}.cloud-conflict button{flex:1;white-space:normal}.cloud-local-note{margin:15px 0 0;padding-top:12px;border-top:1px solid #303043;color:#85849a;font-size:10px;line-height:1.55}.cloud-sync-banner{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:-16px 0 24px;padding:13px 15px;border:1px solid #966e32;border-radius:12px;background:#211a12;color:#f3dfb6;font-size:12px;line-height:1.5}.cloud-sync-banner[hidden]{display:none}.cloud-sync-banner button{flex:none}
+@media(max-width:480px){.cloud-auth-actions,.cloud-conflict>div{grid-template-columns:1fr;flex-direction:column}.cloud-auth-actions button,.cloud-conflict button{width:100%}.cloud-sync-banner{align-items:flex-start;flex-direction:column}}
 </style>
 
 <style id="estante-settings-profile-menu-styles">
@@ -892,7 +892,8 @@ input,select,textarea{max-width:100%;min-width:0}
   <div class="side-footer"><div class="eyebrow">Memória em cartucho</div><p>O que já está na prateleira e o que ainda falta encontrar.</p></div>
 </aside>
 <main class="main">
-  <header class="topbar"><div class="crumb"><span>Estante</span><span>／</span><b id="breadcrumb">Todos os jogos</b></div><div class="top-actions"><label class="search"><span>⌕</span><input id="searchInput" placeholder="Buscar jogos ou consoles..." autocomplete="off" /></label><button class="iconbutton" id="generalSettings" type="button" title="Configurações gerais" aria-label="Configurações gerais">⚙</button><button class="iconbutton" id="addGameTop" type="button" title="Adicionar jogo" aria-label="Adicionar jogo">＋</button><button class="iconbutton legacy-setting-trigger" id="themeSettings" type="button" title="Personalizar tema" aria-label="Personalizar tema">◐</button><button class="iconbutton legacy-setting-trigger" id="sgdbSettings" type="button" title="Configurar SteamGridDB" aria-label="Configurar SteamGridDB">▧</button><button class="iconbutton profile-add-button legacy-profile-trigger" id="profileAddTop" type="button" title="Adicionar ou trocar perfil" aria-label="Adicionar ou trocar perfil">＋</button><button class="profile" id="profileButton" type="button" title="Abrir menu do perfil" aria-label="Abrir menu do perfil" aria-haspopup="true" aria-expanded="false">MC</button><div class="profile-menu" id="profileMenu" role="menu" hidden><div class="profile-menu-heading"><span>PERFIL ATIVO</span><strong id="profileMenuName">Minha coleção</strong><small id="profileMenuCloudStatus">Nuvem não configurada</small></div><button class="profile-menu-item" id="profileMenuOpen" type="button" role="menuitem"><span aria-hidden="true">♙</span><span><strong>Meu perfil</strong><small>Editar nome, foto e preferências pessoais</small></span></button><button class="profile-menu-item" id="profileMenuManage" type="button" role="menuitem"><span aria-hidden="true">⇄</span><span><strong>Trocar ou gerenciar perfis</strong><small>Separar coleções no mesmo navegador</small></span></button><button class="profile-menu-item" id="cloudLoginButton" type="button" role="menuitem" title="Login e sincronização"><span aria-hidden="true">☁</span><span><strong>Nuvem e sincronização</strong><small>Usar a mesma coleção no PC e celular</small></span></button><button class="profile-menu-item" id="profileMenuSettings" type="button" role="menuitem"><span aria-hidden="true">⚙</span><span><strong>Configurações gerais</strong><small>Temas e integrações de API</small></span></button></div></div></header>
+  <div class="cloud-sync-banner" id="cloudSyncBanner" role="alert" hidden><span id="cloudSyncBannerMessage"></span><button class="secondary" id="cloudSyncBannerAction" type="button">Resolver conflito</button></div>
+  <header class="topbar"><div class="crumb"><span>Estante</span><span>／</span><b id="breadcrumb">Todos os jogos</b></div><div class="top-actions"><label class="search"><span>⌕</span><input id="searchInput" placeholder="Buscar jogos ou consoles..." autocomplete="off" /></label><button class="iconbutton" id="generalSettings" type="button" title="Configurações gerais" aria-label="Configurações gerais">⚙</button><button class="iconbutton" id="addGameTop" type="button" title="Adicionar jogo" aria-label="Adicionar jogo">＋</button><button class="iconbutton legacy-setting-trigger" id="themeSettings" type="button" title="Personalizar tema" aria-label="Personalizar tema">◐</button><button class="iconbutton legacy-setting-trigger" id="sgdbSettings" type="button" title="Configurar SteamGridDB" aria-label="Configurar SteamGridDB">▧</button><button class="iconbutton profile-add-button legacy-profile-trigger" id="profileAddTop" type="button" title="Adicionar ou trocar perfil" aria-label="Adicionar ou trocar perfil">＋</button><button class="profile" id="profileButton" type="button" title="Abrir menu do perfil" aria-label="Abrir menu do perfil" aria-haspopup="true" aria-expanded="false">MC</button><div class="profile-menu" id="profileMenu" role="menu" hidden><div class="profile-menu-heading"><span>PERFIL ATIVO</span><strong id="profileMenuName">Minha coleção</strong><small id="profileMenuCloudStatus">Coleção salva neste dispositivo</small></div><button class="profile-menu-item" id="profileMenuOpen" type="button" role="menuitem"><span aria-hidden="true">♙</span><span><strong>Meu perfil</strong><small>Editar nome, foto e preferências pessoais</small></span></button><button class="profile-menu-item" id="profileMenuManage" type="button" role="menuitem"><span aria-hidden="true">⇄</span><span><strong>Trocar ou gerenciar perfis</strong><small>Separar coleções no mesmo navegador</small></span></button><button class="profile-menu-item" id="cloudLoginButton" type="button" role="menuitem" title="Login e sincronização"><span aria-hidden="true">☁</span><span><strong>Nuvem e sincronização</strong><small>Usar a mesma coleção no PC e celular</small></span></button><button class="profile-menu-item" id="profileMenuSettings" type="button" role="menuitem"><span aria-hidden="true">⚙</span><span><strong>Configurações gerais</strong><small>Temas e integrações de API</small></span></button></div></div></header>
   <section class="hero"><div><div class="eyebrow" id="heroEyebrow">Seu arquivo de jogos · desde sempre</div><h1 id="pageTitle">Sua estante<span style="color:var(--orange)">.</span></h1><p id="pageDescription">Um lugar para lembrar o que você tem, acompanhar seus jogos e guardar os próximos que quer encontrar. Sem pressa: a coleção é sua.</p></div><button class="primary" id="heroAction">＋ &nbsp;Adicionar jogo</button></section>
   <section class="stats" id="stats"></section>
   <section id="mainContent"></section>
@@ -901,6 +902,7 @@ input,select,textarea{max-width:100%;min-width:0}
 </div>
 <div class="modal-backdrop" id="modalBackdrop"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h2 id="modalTitle">Adicionar console</h2><button class="close" id="modalClose">×</button></div><form id="editorForm"></form></div></div>
 <div class="toast" id="toast"></div><div class="modal-backdrop" id="cloudBackdrop"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h2>Login e sincronização</h2><button class="close" id="cloudClose">×</button></div><div id="cloudPanel"></div></div></div>
+<script src="./cloud-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const baseConsoles=[];
@@ -1756,128 +1758,184 @@ function openEditor(mode,consoleId,game){
   if(del)del.onclick=()=>{if(isGame){const c=consoles.find(c=>c.id===consoleId);const idx=c?.games.indexOf(game)??-1;if(!c||idx<0)return;if(!confirm(`Mover “${game.title}” para a lixeira? Você poderá restaurá-lo depois.`))return;$('#modalBackdrop').classList.remove('open');void estanteMoveGameToTrash(c,idx,true);}else{if(!confirm('Excluir esta plataforma? Os jogos nela cadastrados também deixarão a coleção.'))return;consoles=consoles.filter(c=>c.id!==consoleId);currentView='platforms';currentConsole=null;toast('Plataforma removida');persist();$('#modalBackdrop').classList.remove('open');render();}};
   $('#modalClose').onclick=()=>$('#modalBackdrop').classList.remove('open');
 }
-// Sincronização opcional entre dispositivos via Supabase (plano gratuito). Requer criar o projeto e aplicar o SQL incluído no pacote.
-const CLOUD_CONFIG_KEY='estanteSupabaseConfigV1', CLOUD_SESSION_KEY='estanteSupabaseSessionV1';
-let cloudConfig={url:'',anonKey:''},cloudSession=null,cloudSyncTimer=null,cloudApplying=false;
-let cloudAuthClient=null,cloudAuthClientKey='',cloudAuthSubscription=null,cloudPanelMessage='',cloudPanelMessageType='info';
-try{cloudConfig={...cloudConfig,...JSON.parse(localStorage.getItem(CLOUD_CONFIG_KEY)||'{}')};cloudSession=JSON.parse(localStorage.getItem(CLOUD_SESSION_KEY)||'null');}catch(e){}
+// Login e sincronização usam o projeto Supabase configurado pelo site.
+const CLOUD_SESSION_KEY='estanteSupabaseSessionV1';
+const CLOUD_BASELINE_PREFIX='estanteSupabaseSyncBaselineV1__';
+const cloudConfig=window.ESTANTE_CLOUD_CONFIG||{url:'',anonKey:''};
+let cloudSession=null,cloudSyncTimer=null,cloudApplying=false,cloudSyncBusy=false,cloudSyncPending=false;
+let cloudAuthClient=null,cloudAuthSubscription=null,cloudPanelMessage='',cloudPanelMessageType='info';
+let cloudSyncState='offline',cloudSyncStateMessage='A coleção continua salva neste navegador.',cloudConflict=null;
+try{cloudSession=JSON.parse(localStorage.getItem(CLOUD_SESSION_KEY)||'null');}catch(e){}
 function cloudHasConfig(){return !!(String(cloudConfig.url||'').trim()&&String(cloudConfig.anonKey||'').trim())}
 function cloudReady(){return !!(cloudHasConfig()&&cloudSession?.access_token&&cloudSession?.user?.id)}
-function cloudFriendlyError(error,context=''){
+function cloudFriendlyError(error){
  const raw=String(error?.message||error||'Erro desconhecido');const msg=raw.toLowerCase();
- if(msg.includes('estante_cloud_data')&&(msg.includes('schema cache')||msg.includes('could not find the table')||msg.includes('does not exist')))
-  return 'A tabela de sincronização ainda não está pronta no Supabase. Execute o arquivo corrigir_estante_cloud.sql no SQL Editor do projeto e tente novamente.';
+ if(msg.includes('estante_cloud_data')&&(msg.includes('schema cache')||msg.includes('could not find the table')||msg.includes('does not exist')||msg.includes('revision')))
+  return 'A sincronização ainda não está pronta neste site. Recarregue a página; se o problema continuar, avise quem mantém a Estante.';
  if(msg.includes('invalid login credentials'))return 'E-mail ou senha incorretos. Confira os dados e tente novamente.';
- if(msg.includes('email not confirmed'))return 'Seu e-mail ainda não foi confirmado. Abra a mensagem de confirmação e clique no link antes de entrar.';
- if(msg.includes('user already registered'))return 'Já existe uma conta com esse e-mail. Use “Entrar” em vez de criar outra conta.';
- if(msg.includes('provider is not enabled')||msg.includes('unsupported provider')||msg.includes('provider_disabled')||msg.includes('google')){
-  if(context==='google'||msg.includes('provider')||msg.includes('google'))return 'O login Google ainda não está habilitado no Supabase. Abra Authentication → Sign In / Providers → Google, configure o Client ID e o Client Secret e habilite o provedor. Veja as instruções neste painel.';
- }
- if(msg.includes('redirect_url_not_allowed')||msg.includes('redirect url')||msg.includes('not whitelisted')||msg.includes('redirect_to'))
-  return 'O endereço de retorno da Estante não está autorizado. No Supabase, abra Authentication → URL Configuration e adicione o endereço HTTPS atual em Redirect URLs.';
- if(msg.includes('failed to fetch')||msg.includes('networkerror')||msg.includes('load failed'))return 'Não foi possível conectar ao Supabase. Confira sua internet e a URL do projeto.';
- if(msg.includes('invalid api key')||msg.includes('invalid jwt')||msg.includes('api key'))return 'A chave pública do Supabase parece inválida. Confira a URL e a chave publicável/anon na configuração técnica.';
- if(msg.includes('supabase-js')||msg.includes('createclient'))return 'A biblioteca de autenticação não carregou. Confira a internet e recarregue a Estante.';
+ if(msg.includes('email not confirmed'))return 'Confirme seu e-mail pelo link enviado antes de entrar.';
+ if(msg.includes('user already registered'))return 'Já existe uma conta com esse e-mail. Use “Entrar”.';
+ if(msg.includes('failed to fetch')||msg.includes('networkerror')||msg.includes('load failed'))return 'Não foi possível conectar. Confira sua internet e tente novamente.';
+ if(msg.includes('supabase-js')||msg.includes('createclient'))return 'O serviço de login não carregou. Confira sua internet e recarregue a Estante.';
  return raw;
 }
-function cloudRedirectUrl(){
- if(!['http:','https:'].includes(window.location.protocol))throw new Error('Para confirmar o e-mail ou entrar com Google, abra a Estante por um endereço web (de preferência HTTPS), não diretamente como arquivo .html.');
- const target=new URL(window.location.href);target.hash='';target.search='';return target.toString();
-}
 function cloudClient(){
- if(!cloudHasConfig())throw new Error('Antes do primeiro login, abra “Configuração técnica (uma vez)” e informe a URL e a chave pública do projeto Supabase.');
- if(!window.supabase||typeof window.supabase.createClient!=='function')throw new Error('A biblioteca supabase-js não carregou. Confira sua internet e recarregue a página.');
- const normalizedUrl=String(cloudConfig.url).trim().replace(/\/+$/,'');const normalizedKey=String(cloudConfig.anonKey).trim();const fingerprint=normalizedUrl+'|'+normalizedKey;
- if(cloudAuthClient&&cloudAuthClientKey===fingerprint)return cloudAuthClient;
- if(cloudAuthSubscription){try{cloudAuthSubscription.unsubscribe()}catch(e){}}
- cloudAuthClient=window.supabase.createClient(normalizedUrl,normalizedKey,{auth:{autoRefreshToken:true,persistSession:true,detectSessionInUrl:true,flowType:'implicit'}});cloudAuthClientKey=fingerprint;
+ if(!cloudHasConfig())throw new Error('O login ainda não foi configurado para este site.');
+ if(!window.supabase||typeof window.supabase.createClient!=='function')throw new Error('supabase-js não carregou. Confira sua internet e recarregue a Estante.');
+ if(cloudAuthClient)return cloudAuthClient;
+ cloudAuthClient=window.supabase.createClient(String(cloudConfig.url).trim().replace(/\/+$/,''),String(cloudConfig.anonKey).trim(),{auth:{autoRefreshToken:true,persistSession:true,detectSessionInUrl:true,flowType:'implicit'}});
  const subscription=cloudAuthClient.auth.onAuthStateChange((event,session)=>{
   if(session){cloudSession=session;try{localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(session))}catch(e){}}
   else if(event==='SIGNED_OUT'){cloudSession=null;try{localStorage.removeItem(CLOUD_SESSION_KEY)}catch(e){}}
+  if(typeof updateProfileMenuSummary==='function')updateProfileMenuSummary();
  });
  cloudAuthSubscription=subscription?.data?.subscription||null;
  return cloudAuthClient;
 }
-function cloudSaveConfigFromPanel(){
- const urlInput=$('#cloudUrl'),keyInput=$('#cloudAnon');
- if(urlInput&&keyInput){
-  const nextConfig={url:urlInput.value.trim().replace(/\/+$/,''),anonKey:keyInput.value.trim()};
-  const urlChanged=String(cloudConfig.url||'').trim().replace(/\/+$/,'')!==nextConfig.url;
-  const keyChanged=String(cloudConfig.anonKey||'').trim()!==nextConfig.anonKey;
-  if(urlChanged||keyChanged){
-   if(cloudAuthSubscription){try{cloudAuthSubscription.unsubscribe()}catch(e){}cloudAuthSubscription=null;}
-   cloudAuthClient=null;cloudAuthClientKey='';
-   // Do not reuse a token issued by a different Supabase project.
-   if(urlChanged&&cloudConfig.url){cloudSession=null;try{localStorage.removeItem(CLOUD_SESSION_KEY)}catch(e){}}
-  }
-  cloudConfig=nextConfig;
-  try{localStorage.setItem(CLOUD_CONFIG_KEY,JSON.stringify(cloudConfig))}catch(e){throw new Error('O navegador não permitiu guardar a configuração. Verifique as permissões de armazenamento.')}
- }
- if(!cloudHasConfig())throw new Error('Preencha a URL e a chave pública do Supabase na configuração técnica.');
- return cloudConfig;
-}
 function cloudHeaders(extra={}){return {'apikey':cloudConfig.anonKey,'Authorization':'Bearer '+(cloudSession?.access_token||cloudConfig.anonKey),'Content-Type':'application/json',...extra}}
-async function cloudFetch(path,options={}){const base=String(cloudConfig.url||'').replace(/\/+$/,'');if(!base||!cloudConfig.anonKey)throw new Error('Informe a URL e a chave pública (anon/publishable) do Supabase.');const res=await fetch(base+path,{...options,headers:cloudHeaders(options.headers||{})});let data=null;try{data=await res.json()}catch(e){}if(!res.ok)throw new Error(data?.msg||data?.message||data?.error_description||data?.error||('Erro Supabase '+res.status));return data}
-function cloudSnapshot(){return {schemaVersion:1,consoles,wishlist,profile,accessories,updatedAt:new Date().toISOString()}}
-function applyCloudSnapshot(data){if(!data||typeof data!=='object')return;cloudApplying=true;try{if(Array.isArray(data.consoles))consoles=data.consoles;if(Array.isArray(data.wishlist))wishlist=data.wishlist;if(data.profile&&typeof data.profile==='object')profile={...defaultProfile,...data.profile};if(Array.isArray(data.accessories))accessories=data.accessories;localStorage.setItem(profileDataKey('estanteCollectionV1'),JSON.stringify(consoles));localStorage.setItem(profileDataKey('estanteWishlistV1'),JSON.stringify(wishlist));localStorage.setItem(PROFILE_KEY,JSON.stringify(profile));localStorage.setItem(profileDataKey('estanteAccessoriesV1'),JSON.stringify(accessories));}catch(e){console.warn(e)}finally{cloudApplying=false}updateProfileBadge();updateWishlistBadge();render()}
-async function cloudSyncNow(showToast=false,throwOnError=false){if(!cloudReady()||cloudApplying)return false;try{const userId=cloudSession.user.id;await cloudFetch('/rest/v1/estante_cloud_data?on_conflict=user_id',{method:'POST',headers:{'Prefer':'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({user_id:userId,data:cloudSnapshot(),updated_at:new Date().toISOString()})});if(showToast)toast('Coleção sincronizada na nuvem.');return true}catch(e){const friendly=cloudFriendlyError(e);console.warn('Falha na sincronização',e);if(showToast)toast(friendly);if(throwOnError)throw new Error(friendly);return false}}
-function queueCloudSync(){if(!cloudReady()||cloudApplying)return;clearTimeout(cloudSyncTimer);cloudSyncTimer=setTimeout(()=>cloudSyncNow(false),900)}
-async function cloudLoad(){if(!cloudReady())return;const rows=await cloudFetch('/rest/v1/estante_cloud_data?user_id=eq.'+encodeURIComponent(cloudSession.user.id)+'&select=data,updated_at',{method:'GET'});if(rows?.length&&rows[0].data){applyCloudSnapshot(rows[0].data);toast('Coleção carregada da nuvem.')}else{const ok=await cloudSyncNow(false,true);if(ok)toast('Conta conectada. A coleção deste dispositivo foi enviada para a nuvem.')}}
-function cloudLogout(){const client=cloudAuthClient;cloudSession=null;try{localStorage.removeItem(CLOUD_SESSION_KEY)}catch(e){}if(client)client.auth.signOut({scope:'local'}).catch(e=>console.warn('Falha ao encerrar a sessão',e));cloudPanelMessage='Você saiu da conta. A coleção continua salva neste dispositivo.';cloudPanelMessageType='success';renderCloudPanel();}
+async function cloudFetch(path,options={}){
+ const base=String(cloudConfig.url||'').replace(/\/+$/,'');if(!base||!cloudConfig.anonKey)throw new Error('Login não configurado neste site.');
+ const res=await fetch(base+path,{...options,headers:cloudHeaders(options.headers||{})});let data=null;try{data=await res.json()}catch(e){}
+ if(!res.ok)throw new Error(data?.msg||data?.message||data?.error_description||data?.error||('Erro Supabase '+res.status));return data;
+}
+function cloudContent(data={}){
+ return {schemaVersion:2,profileId:String(data.profileId||'default'),consoles:Array.isArray(data.consoles)?data.consoles:[],wishlist:Array.isArray(data.wishlist)?data.wishlist:[],profile:{...defaultProfile,...(data.profile&&typeof data.profile==='object'?data.profile:{})},accessories:Array.isArray(data.accessories)?data.accessories:[]};
+}
+function cloudSnapshot(){return {...cloudContent({profileId:currentProfileId,consoles,wishlist,profile,accessories}),updatedAt:new Date().toISOString()}}
+function cloudStableValue(value){if(Array.isArray(value))return value.map(cloudStableValue);if(value&&typeof value==='object'){const out={};Object.keys(value).sort().forEach(key=>{out[key]=cloudStableValue(value[key]);});return out;}return value;}
+async function cloudFingerprint(value){
+ const serialized=JSON.stringify(cloudStableValue(cloudContent(value)));
+ if(window.crypto?.subtle&&window.TextEncoder){const digest=await window.crypto.subtle.digest('SHA-256',new TextEncoder().encode(serialized));return [...new Uint8Array(digest)].map(n=>n.toString(16).padStart(2,'0')).join('');}
+ let a=2166136261,b=0x9e3779b9;for(let i=0;i<serialized.length;i++){a=Math.imul(a^serialized.charCodeAt(i),16777619);b=Math.imul(b^serialized.charCodeAt(i),2246822519);}return `${(a>>>0).toString(16)}-${(b>>>0).toString(16)}-${serialized.length}`;
+}
+function cloudBaselineKey(userId){return CLOUD_BASELINE_PREFIX+String(userId||'')}
+function cloudReadBaseline(userId){try{const value=JSON.parse(localStorage.getItem(cloudBaselineKey(userId))||'null');return value&&typeof value.hash==='string'?value:null;}catch(e){return null;}}
+async function cloudSaveBaseline(userId,revision,data){const baseline={revision:Number(revision)||0,profileId:String(data.profileId||'default'),hash:await cloudFingerprint(data),savedAt:new Date().toISOString()};try{localStorage.setItem(cloudBaselineKey(userId),JSON.stringify(baseline));}catch(e){console.warn('Não foi possível guardar a referência local de sincronização.',e);}return baseline;}
+async function cloudReadRecord(){const rows=await cloudFetch('/rest/v1/estante_cloud_data?user_id=eq.'+encodeURIComponent(cloudSession.user.id)+'&select=data,updated_at,revision',{method:'GET'});return rows?.length?{data:cloudContent(rows[0].data),revision:Number(rows[0].revision)||0,updatedAt:rows[0].updated_at||''}:null;}
+async function cloudWriteSnapshot(data,expectedRevision){
+ let result=await cloudFetch('/rest/v1/rpc/estante_save_cloud_snapshot',{method:'POST',body:JSON.stringify({p_expected_revision:Number(expectedRevision)||0,p_data:cloudContent(data)})});
+ if(Array.isArray(result))result=result[0];
+ if(!result||typeof result.saved!=='boolean')throw new Error('O Supabase retornou uma resposta inválida ao salvar a coleção.');
+ return {saved:result.saved,revision:Number(result.revision)||0,data:result.data?cloudContent(result.data):null,updatedAt:result.updated_at||''};
+}
+function cloudHasMeaningfulLocalData(data){return !!(data.consoles.length||data.wishlist.length||data.accessories.length||JSON.stringify(cloudStableValue(data.profile))!==JSON.stringify(cloudStableValue(defaultProfile)));}
+function cloudSetSyncState(state,message){cloudSyncState=state;cloudSyncStateMessage=message||'';cloudUpdateIndicators();if($('#cloudBackdrop')?.classList.contains('open'))renderCloudPanel();}
+function cloudUpdateIndicators(){
+ const banner=$('#cloudSyncBanner'),message=$('#cloudSyncBannerMessage'),button=$('#cloudSyncBannerAction');
+ const show=cloudSyncState==='conflict';if(banner)banner.hidden=!show;if(message)message.textContent=cloudSyncStateMessage||'Há alterações diferentes neste dispositivo e na nuvem.';
+ if(button&&button.dataset.wired!=='true'){button.dataset.wired='true';button.onclick=openCloudPanel;}
+ if(typeof updateProfileMenuSummary==='function')updateProfileMenuSummary();
+}
+function cloudMarkConflict(remote,localData){
+ const empty=cloudContent({profileId:currentProfileId,consoles:[],wishlist:[],profile:defaultProfile,accessories:[]});
+ cloudConflict={remoteRevision:Number(remote?.revision)||0,remoteData:remote?.data?cloudContent(remote.data):empty,localData:cloudContent(localData||cloudSnapshot()),remoteUpdatedAt:remote?.updatedAt||''};
+ cloudPanelMessage='';cloudSetSyncState('conflict','Há alterações diferentes neste dispositivo e na nuvem. Escolha qual coleção manter antes de continuar.');
+}
+function cloudApplySnapshot(data){
+ if(!data||typeof data!=='object')return false;
+ const next=cloudContent(data),keys=[profileDataKey('estanteCollectionV1'),profileDataKey('estanteWishlistV1'),PROFILE_KEY,profileDataKey('estanteAccessoriesV1')];
+ const values=[JSON.stringify(next.consoles),JSON.stringify(next.wishlist),JSON.stringify(next.profile),JSON.stringify(next.accessories)];
+ const previous=Object.fromEntries(keys.map(key=>[key,localStorage.getItem(key)]));cloudApplying=true;
+ try{keys.forEach((key,index)=>localStorage.setItem(key,values[index]));consoles=next.consoles;wishlist=next.wishlist;profile=next.profile;accessories=next.accessories;}
+ catch(error){keys.forEach(key=>{try{if(previous[key]===null)localStorage.removeItem(key);else localStorage.setItem(key,previous[key]);}catch(_){}});toast('Não há espaço suficiente para aplicar a cópia da nuvem. Seus dados locais foram preservados.');return false;}
+ finally{cloudApplying=false;}
+ updateProfileBadge();updateWishlistBadge();render();return true;
+}
+async function cloudReconcile(showToast=false){
+ if(!cloudReady()||cloudApplying||cloudSyncBusy)return false;cloudSyncBusy=true;cloudSetSyncState('syncing','Comparando esta coleção com a nuvem…');
+ try{
+  const userId=cloudSession.user.id,localData=cloudContent(cloudSnapshot()),localHash=await cloudFingerprint(localData),baseline=cloudReadBaseline(userId),remote=await cloudReadRecord();
+  if(!remote){
+   if(baseline){cloudMarkConflict(null,localData);return false;}
+   const written=await cloudWriteSnapshot(localData,0);if(!written.saved){cloudMarkConflict(written,localData);return false;}
+   await cloudSaveBaseline(userId,written.revision,written.data);cloudConflict=null;cloudSetSyncState('synced','Coleção sincronizada.');if(showToast)toast('Coleção sincronizada na nuvem.');return true;
+  }
+  const remoteHash=await cloudFingerprint(remote.data);
+  if(localHash===remoteHash){await cloudSaveBaseline(userId,remote.revision,localData);cloudConflict=null;cloudSetSyncState('synced','Coleção sincronizada.');if(showToast)toast('Coleção sincronizada na nuvem.');return true;}
+  if(!baseline){
+   if(!cloudHasMeaningfulLocalData(localData)&&remote.data.profileId===localData.profileId){
+    if(!cloudApplySnapshot(remote.data)){cloudSetSyncState('error','A cópia da nuvem não coube no armazenamento deste dispositivo.');return false;}
+    await cloudSaveBaseline(userId,remote.revision,remote.data);cloudSetSyncState('synced','Coleção carregada da nuvem.');if(showToast)toast('Coleção carregada da nuvem.');return true;
+   }
+   cloudMarkConflict(remote,localData);return false;
+  }
+  const profileMatches=baseline.profileId===localData.profileId&&baseline.profileId===remote.data.profileId;
+  if(!profileMatches){cloudMarkConflict(remote,localData);return false;}
+  const localChanged=localHash!==baseline.hash,remoteChanged=remoteHash!==baseline.hash;
+  if(!localChanged&&!remoteChanged){await cloudSaveBaseline(userId,remote.revision,localData);cloudConflict=null;cloudSetSyncState('synced','Coleção sincronizada.');return true;}
+  if(!localChanged&&remoteChanged){
+   if(!cloudApplySnapshot(remote.data)){cloudSetSyncState('error','A cópia da nuvem não coube no armazenamento deste dispositivo.');return false;}
+   await cloudSaveBaseline(userId,remote.revision,remote.data);cloudConflict=null;cloudSetSyncState('synced','Alterações da nuvem carregadas.');if(showToast)toast('Alterações da nuvem carregadas.');return true;
+  }
+  if(localChanged&&!remoteChanged){
+   const written=await cloudWriteSnapshot(localData,remote.revision);if(!written.saved){cloudMarkConflict(written,localData);return false;}
+   await cloudSaveBaseline(userId,written.revision,written.data);cloudConflict=null;cloudSetSyncState('synced','Coleção sincronizada.');if(showToast)toast('Coleção sincronizada na nuvem.');return true;
+  }
+  cloudMarkConflict(remote,localData);return false;
+ }catch(error){const friendly=cloudFriendlyError(error);console.warn('Falha na sincronização',error);cloudPanelMessage=friendly;cloudPanelMessageType='error';cloudSetSyncState('error',friendly);if(showToast)toast(friendly);return false;}
+ finally{cloudSyncBusy=false;if(cloudSyncPending){cloudSyncPending=false;queueCloudSync();}}
+}
+async function cloudResolveConflict(choice){
+ if(!cloudConflict||!cloudReady()||cloudSyncBusy)return;cloudSyncBusy=true;const expected=cloudConflict.remoteRevision;const localData=cloudContent(cloudSnapshot());cloudSetSyncState('syncing','Conferindo a versão mais recente antes de aplicar sua escolha…');
+ try{
+  const latest=await cloudReadRecord(),latestRevision=Number(latest?.revision)||0;
+  if(latestRevision!==expected){cloudMarkConflict(latest,localData);cloudPanelMessage='A nuvem mudou enquanto esta decisão estava aberta. Confira as versões atualizadas.';renderCloudPanel();return;}
+  if(choice==='cloud'){
+   if(await cloudFingerprint(localData)!==await cloudFingerprint(cloudConflict.localData)){cloudMarkConflict(latest,localData);cloudPanelMessage='A coleção local mudou enquanto esta decisão estava aberta. Confira as versões atualizadas.';renderCloudPanel();return;}
+   const chosen=cloudContent(latest?.data||cloudConflict.remoteData);chosen.profileId=currentProfileId;
+   const written=await cloudWriteSnapshot(chosen,latestRevision);if(!written.saved){cloudMarkConflict(written,localData);return;}
+   if(!cloudApplySnapshot(chosen)){cloudSetSyncState('error','A coleção local não coube no armazenamento. A cópia da nuvem continua preservada.');return;}
+   await cloudSaveBaseline(cloudSession.user.id,written.revision,written.data);
+  }else{
+   const written=await cloudWriteSnapshot(localData,latestRevision);if(!written.saved){cloudMarkConflict(written,localData);return;}
+   await cloudSaveBaseline(cloudSession.user.id,written.revision,written.data);
+  }
+  cloudConflict=null;cloudPanelMessage=choice==='cloud'?'A cópia da nuvem foi aplicada neste dispositivo.':'A coleção deste dispositivo foi mantida e sincronizada.';cloudPanelMessageType='success';cloudSetSyncState('synced',cloudPanelMessage);renderCloudPanel();
+ }catch(error){const friendly=cloudFriendlyError(error);cloudPanelMessage=friendly;cloudPanelMessageType='error';cloudSetSyncState('error',friendly);renderCloudPanel();}
+ finally{cloudSyncBusy=false;if(cloudSyncPending){cloudSyncPending=false;queueCloudSync();}}
+}
+function queueCloudSync(){if(!cloudReady()||cloudApplying)return;if(cloudSyncBusy){cloudSyncPending=true;return;}clearTimeout(cloudSyncTimer);cloudSyncTimer=setTimeout(()=>void cloudReconcile(false),900)}
+async function cloudLoad(){if(!cloudReady())return;await cloudReconcile(false)}
+function cloudLogout(){const client=cloudAuthClient;cloudSession=null;cloudConflict=null;try{localStorage.removeItem(CLOUD_SESSION_KEY)}catch(e){}if(client)client.auth.signOut({scope:'local'}).catch(e=>console.warn('Falha ao encerrar a sessão',e));cloudPanelMessage='Você saiu da conta. A coleção continua salva neste dispositivo.';cloudPanelMessageType='success';cloudSetSyncState('offline',cloudPanelMessage);renderCloudPanel();}
 async function cloudAuth(mode,email,password){
- cloudSaveConfigFromPanel();const client=cloudClient();let result;
+ const client=cloudClient();let result;
  if(mode==='signup'){
-  const redirectTo=cloudRedirectUrl();result=await client.auth.signUp({email,password,options:{emailRedirectTo:redirectTo}});
-  if(result.error)throw result.error;
-  if(result.data?.session){cloudSession=result.data.session;localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(cloudSession));await cloudLoad();cloudPanelMessage='Conta criada e conectada. Sua coleção já pode sincronizar entre dispositivos.';cloudPanelMessageType='success';renderCloudPanel();}
-  else{cloudPanelMessage='Conta criada. Enviamos um link para confirmar seu e-mail. Abra o link no mesmo endereço da Estante; depois, entre com seu e-mail e senha.';cloudPanelMessageType='success';renderCloudPanel();}
+  const redirectTo=new URL(window.location.href);redirectTo.hash='';redirectTo.search='';result=await client.auth.signUp({email,password,options:{emailRedirectTo:redirectTo.toString()}});if(result.error)throw result.error;
+  if(result.data?.session){cloudSession=result.data.session;try{localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(cloudSession))}catch(e){}await cloudLoad();cloudPanelMessage='Conta criada. A coleção deste dispositivo está pronta para sincronizar.';cloudPanelMessageType='success';renderCloudPanel();}
+  else{cloudPanelMessage='Conta criada. Enviamos um link para confirmar seu e-mail. Depois, volte aqui para entrar.';cloudPanelMessageType='success';renderCloudPanel();}
  }else{
   result=await client.auth.signInWithPassword({email,password});if(result.error)throw result.error;
-  cloudSession=result.data.session;localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(cloudSession));await cloudLoad();cloudPanelMessage='Conectado. A coleção será sincronizada automaticamente neste dispositivo.';cloudPanelMessageType='success';renderCloudPanel();
+  cloudSession=result.data.session;try{localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(cloudSession))}catch(e){}await cloudLoad();cloudPanelMessage=cloudConflict?'Escolha qual versão manter para concluir a sincronização.':'Login concluído. Sua coleção está sincronizada.';cloudPanelMessageType=cloudConflict?'info':'success';renderCloudPanel();
  }
 }
-async function cloudGoogleLogin(){
- cloudSaveConfigFromPanel();const client=cloudClient();const redirectTo=cloudRedirectUrl();
- const {error}=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo,queryParams:{prompt:'select_account'}}});
- if(error)throw error;
-}
 function renderCloudPanel(message='',messageType='info',formValues={}){
- const panel=$('#cloudPanel');if(!panel)return;
- if(message){cloudPanelMessage=message;cloudPanelMessageType=messageType}
- const shownMessage=message||cloudPanelMessage;const shownType=message?messageType:cloudPanelMessageType;
- const ready=cloudReady();const configured=cloudHasConfig();
+ const panel=$('#cloudPanel');if(!panel)return;if(message){cloudPanelMessage=message;cloudPanelMessageType=messageType;}
+ const shownMessage=cloudPanelMessage,shownType=cloudPanelMessageType,ready=cloudReady();
  const messageMarkup=shownMessage?`<div class="cloud-message ${shownType==='success'?'success':shownType==='error'?'error':''}" role="status">${esc(shownMessage)}</div>`:'';
- panel.innerHTML=`<p class="cloud-auth-intro">Entre para manter consoles, jogos, wishlist, perfil e acessórios sincronizados entre o computador e o celular. Use a mesma conta nos dois dispositivos.</p>
-  <div class="cloud-auth-current"><span class="cloud-auth-dot" style="background:${ready?'#c7f464':'#77768c'};box-shadow:none"></span><span>${ready?'Conectado como <strong>'+esc(cloudSession.user.email||'sua conta')+'</strong>':'A coleção deste dispositivo continua disponível mesmo sem entrar.'}</span></div>
-  ${ready?'':`<div class="field"><label for="cloudEmail">E-mail</label><input id="cloudEmail" type="email" autocomplete="email" placeholder="voce@exemplo.com" value="${esc(formValues.email||'')}" required></div><div class="field"><label for="cloudPassword">Senha</label><input id="cloudPassword" type="password" autocomplete="current-password" minlength="6" placeholder="Mínimo de 6 caracteres" value="${esc(formValues.password||'')}" required></div><div class="cloud-auth-actions"><button class="primary" type="button" id="cloudLogin">Entrar</button><button class="secondary" type="button" id="cloudSignup">Criar conta</button></div><div class="cloud-or">ou</div><button class="cloud-google" type="button" id="cloudGoogle"><span class="cloud-google-mark" aria-hidden="true">G</span>Continuar com Google</button><p class="cloud-google-help">O login Google precisa estar habilitado uma única vez nas configurações do projeto Supabase. Veja os passos em “Configuração técnica”.</p>`}
-  ${ready?`<div class="cloud-session-actions"><button class="secondary" type="button" id="cloudSyncNow">Sincronizar agora</button><button class="secondary" type="button" id="cloudLogout">Sair da conta</button></div>`:''}
-  ${messageMarkup}
-  <details class="cloud-config" ${configured?'':'open'}><summary>Configuração técnica (uma vez)</summary><p class="form-hint">Necessária apenas para conectar este site ao seu projeto Supabase. A URL e a chave pública não são sua senha; nunca cole aqui uma chave <code>service_role</code> ou segredo privado.</p>
-    <div class="field"><label for="cloudUrl">URL do projeto Supabase</label><input id="cloudUrl" type="url" placeholder="https://seu-projeto.supabase.co" value="${esc(cloudConfig.url)}" autocomplete="url"></div>
-    <div class="field"><label for="cloudAnon">Chave pública (anon / publishable)</label><input id="cloudAnon" type="password" autocomplete="off" placeholder="sb_publishable_... ou anon key" value="${esc(cloudConfig.anonKey)}"></div>
-    <div class="modal-actions" style="justify-content:flex-start"><button class="secondary" type="button" id="cloudSaveConfig">Salvar configuração</button></div>
-    <div class="cloud-setup-note"><strong>Para confirmação de e-mail e Google:</strong> no Supabase, abra Authentication → URL Configuration e coloque o endereço HTTPS atual da Estante em Redirect URLs. Corrija também o Site URL para o endereço publicado, não localhost.</div>
-    <div class="cloud-setup-note"><strong>Para ativar Google:</strong> abra Authentication → Sign In / Providers → Google, habilite o provedor e informe o Client ID e o Client Secret. No Google Cloud, use como URI de redirecionamento autorizado o callback mostrado no painel do Supabase, normalmente <code>https://SEU-PROJETO.supabase.co/auth/v1/callback</code>.</div>
-  </details>`;
- const saveConfig=()=>{try{cloudSaveConfigFromPanel();cloudPanelMessage='Configuração salva neste navegador. Se você usar outro dispositivo, será necessário conectar o mesmo projeto nele também.';cloudPanelMessageType='success';renderCloudPanel()}catch(e){renderCloudPanel(cloudFriendlyError(e),'error')}};
- const run=async mode=>{try{const email=$('#cloudEmail')?.value.trim(),password=$('#cloudPassword')?.value;if(!email||!password){renderCloudPanel('Preencha o e-mail e a senha.','error',{email,password});return}await cloudAuth(mode,email,password)}catch(e){renderCloudPanel(cloudFriendlyError(e,mode),'error',{email:$('#cloudEmail')?.value.trim()||'',password:$('#cloudPassword')?.value||''})}};
- const google=$('#cloudGoogle');if(google)google.onclick=async()=>{try{await cloudGoogleLogin()}catch(e){renderCloudPanel(cloudFriendlyError(e,'google'),'error')}};
- const login=$('#cloudLogin');if(login)login.onclick=()=>run('login');const signup=$('#cloudSignup');if(signup)signup.onclick=()=>run('signup');
- for(const id of ['cloudEmail','cloudPassword']){const el=$('#'+id);if(el)el.addEventListener('keydown',e=>{if(e.key==='Enter'&&!ready){e.preventDefault();void run('login')}})}
- const save=$('#cloudSaveConfig');if(save)save.onclick=saveConfig;
- const sync=$('#cloudSyncNow');if(sync)sync.onclick=async()=>{try{await cloudSyncNow(true,true)}catch(e){renderCloudPanel(cloudFriendlyError(e),'error')}};
+ const conflictMarkup=cloudConflict?`<section class="cloud-conflict" aria-labelledby="cloudConflictTitle"><h3 id="cloudConflictTitle">Qual coleção você quer manter?</h3><p>Há alterações diferentes nas duas versões. Nenhuma foi substituída. A nuvem foi atualizada em ${esc(cloudConflict.remoteUpdatedAt?displayDate(cloudConflict.remoteUpdatedAt.slice(0,10)):'uma data não informada')}.</p><div><button class="secondary" type="button" id="cloudUseThisDevice">Manter este dispositivo</button><button class="primary" type="button" id="cloudUseCloud">Usar a versão da nuvem</button></div></section>`:'';
+ panel.innerHTML=`<p class="cloud-auth-intro">Entre para guardar uma cópia da sua coleção na nuvem e usá-la em outros dispositivos.</p>
+  <div class="cloud-auth-current"><span class="cloud-auth-dot" style="background:${ready?'#c7f464':'#77768c'};box-shadow:none"></span><span>${ready?'Conectado como <strong>'+esc(cloudSession.user.email||'sua conta')+'</strong>':'Entre ou crie sua conta para sincronizar a coleção.'}</span></div>
+  ${ready?'':`<div class="field"><label for="cloudEmail">E-mail</label><input id="cloudEmail" type="email" autocomplete="email" placeholder="voce@exemplo.com" value="${esc(formValues.email||'')}" required></div><div class="field"><label for="cloudPassword">Senha</label><input id="cloudPassword" type="password" autocomplete="current-password" minlength="6" placeholder="Mínimo de 6 caracteres" value="${esc(formValues.password||'')}" required></div><div class="cloud-auth-actions"><button class="primary" type="button" id="cloudLogin">Entrar</button><button class="secondary" type="button" id="cloudSignup">Criar conta</button></div>`}
+  ${ready?`<div class="cloud-session-actions"><button class="secondary" type="button" id="cloudSyncNow">Verificar sincronização</button><button class="secondary" type="button" id="cloudLogout">Sair da conta</button></div>`:''}
+  ${conflictMarkup}${messageMarkup}<p class="cloud-local-note">Sem login, seus dados continuam neste navegador. A configuração do login é feita pelo site.</p>`;
+ const run=async mode=>{const email=$('#cloudEmail')?.value.trim()||'',password=$('#cloudPassword')?.value||'';if(!email||!password){renderCloudPanel('Preencha o e-mail e a senha.','error',{email,password});return;}try{panel.querySelectorAll('button').forEach(button=>button.disabled=true);await cloudAuth(mode,email,password);}catch(error){renderCloudPanel(cloudFriendlyError(error),'error',{email,password});}};
+ const login=$('#cloudLogin');if(login)login.onclick=()=>void run('login');const signup=$('#cloudSignup');if(signup)signup.onclick=()=>void run('signup');
+ for(const id of ['cloudEmail','cloudPassword']){const input=$('#'+id);if(input)input.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();void run('login');}});}
+ const useDevice=$('#cloudUseThisDevice');if(useDevice)useDevice.onclick=()=>void cloudResolveConflict('local');const useCloud=$('#cloudUseCloud');if(useCloud)useCloud.onclick=()=>void cloudResolveConflict('cloud');
+ const sync=$('#cloudSyncNow');if(sync)sync.onclick=async()=>{sync.disabled=true;await cloudReconcile(true);renderCloudPanel();};
  const logout=$('#cloudLogout');if(logout)logout.onclick=cloudLogout;
 }
 function openCloudPanel(){renderCloudPanel();$('#cloudBackdrop').classList.add('open')}
 async function initCloudAuth(){
- if(!cloudHasConfig())return;
+ if(!cloudHasConfig()){cloudSetSyncState('offline','Login ainda não configurado neste site.');return;}
  try{
   const client=cloudClient();let {data,error}=await client.auth.getSession();if(error)throw error;let session=data?.session||null;
-  // Migrate the old custom session into the SDK-managed session storage, preserving existing logins.
-  if(!session&&cloudSession?.access_token&&cloudSession?.refresh_token){const migrated=await client.auth.setSession({access_token:cloudSession.access_token,refresh_token:cloudSession.refresh_token});if(!migrated.error)session=migrated.data?.session||null;else{try{localStorage.removeItem(CLOUD_SESSION_KEY)}catch(e){}cloudSession=null}}
-  if(session){cloudSession=session;try{localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(session))}catch(e){}try{await cloudLoad()}catch(e){const friendly=cloudFriendlyError(e);cloudPanelMessage=friendly;cloudPanelMessageType='error';toast(friendly)}}
- }catch(e){const friendly=cloudFriendlyError(e);console.warn('Não foi possível restaurar a sessão da Estante:',e);cloudPanelMessage=friendly;cloudPanelMessageType='error'}
+  if(!session&&cloudSession?.access_token&&cloudSession?.refresh_token){const restored=await client.auth.setSession({access_token:cloudSession.access_token,refresh_token:cloudSession.refresh_token});if(!restored.error)session=restored.data?.session||null;else{try{localStorage.removeItem(CLOUD_SESSION_KEY)}catch(e){}cloudSession=null;}}
+  if(session){cloudSession=session;try{localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(session))}catch(e){}await cloudLoad();}
+  else cloudSetSyncState('offline','A coleção está salva neste navegador. Entre para sincronizá-la.');
+ }catch(error){const friendly=cloudFriendlyError(error);console.warn('Não foi possível restaurar a sessão da Estante:',error);cloudPanelMessage=friendly;cloudPanelMessageType='error';cloudSetSyncState('error',friendly);}
 }
+
 function applyTheme(theme,save=true){
  const allowed=['default','red','gamez','ocean','amber','mono'];
  const value=allowed.includes(theme)?theme:'default';
@@ -1911,7 +1969,7 @@ function openProfileSettings(){
     <div class="form-row"><div class="field"><label for="profileFavoritePlatform">Plataforma favorita</label><select id="profileFavoritePlatform" name="favoritePlatform"><option value="">Ainda não escolhi</option>${consoles.map(c=>`<option value="${esc(c.id)}" ${profile.favoritePlatform===c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select></div><div class="field"><label for="profileCollectionGoal">Meta de jogos na coleção</label><input id="profileCollectionGoal" name="collectionGoal" type="number" min="0" max="100000" step="1" value="${Number(profile.collectionGoal)||0}" placeholder="100"><small style="color:#85849a;font-size:10px">Só uma meta pessoal — não limita a coleção.</small></div></div>
     <div class="form-row"><div class="field"><label for="profileAccentColor">Cor de destaque</label><select id="profileAccentColor" name="accentColor">${[['#a855f7','Roxo'],['#ff3fa4','Rosa'],['#28d9e8','Ciano'],['#c7f464','Lima'],['#5b7cfa','Azul'],['#ff805c','Laranja']].map(([v,l])=>`<option value="${v}" ${profile.accentColor===v?'selected':''}>${l}</option>`).join('')}</select></div><div class="field"><label for="profileAvatarFile">Foto do perfil (opcional)</label><input id="profileAvatarFile" name="avatarFile" type="file" accept="image/*"><small style="color:#85849a;font-size:10px">A imagem fica salva localmente neste navegador.</small></div></div>
     <div class="profile-actions"><label style="display:flex;align-items:center;gap:8px;color:#a5a3b8;font-size:11px"><input type="checkbox" id="profileRemoveAvatar" style="accent-color:#a855f7"> Usar iniciais no lugar da foto</label><button class="secondary" type="button" id="profileCancel">Cancelar</button><button class="primary" type="submit">Salvar perfil</button></div>
-    <p class="profile-inline-note">Seu perfil, sua foto e suas preferências ficam neste navegador. Não existe conta online nem envio dessas informações para um servidor.</p>`;
+    <p class="profile-inline-note">Seu perfil, sua foto e suas preferências ficam neste navegador e entram na sincronização quando você está conectada(o).</p>`;
   $('#modalBackdrop').classList.add('open');
   const avatarInput=$('#profileAvatarFile');
   avatarInput.onchange=()=>{const file=avatarInput.files?.[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Selecione um arquivo de imagem.');avatarInput.value='';return;}const reader=new FileReader();reader.onload=()=>{$('#profileAvatarPreview').innerHTML=`<img src="${String(reader.result)}" alt="Prévia da foto">`;$('#profileRemoveAvatar').checked=false;};reader.readAsDataURL(file);};
@@ -2108,7 +2166,7 @@ function renderProfileOverviewView(){
 function renderBackupView(){
   utilityHeading('Seus dados','Dados e backup.','Uma cópia de segurança protege a coleção, a wishlist, seu perfil, o histórico de valores e o inventário de acessórios.', '⇩ Exportar backup',()=>exportEstanteBackup());
   const gameCount=totalGames();const historyCount=allGames().reduce((n,g)=>n+(Array.isArray(g.priceHistory)?g.priceHistory.length:0),0);
-  $('#mainContent').innerHTML=`<div class="backup-summary"><div class="backup-count"><strong>${consoles.length}</strong><small>Plataformas</small></div><div class="backup-count"><strong>${gameCount}</strong><small>Jogos</small></div><div class="backup-count"><strong>${wishlist.length}</strong><small>Wishlist</small></div><div class="backup-count"><strong>${accessories.length}</strong><small>Acessórios</small></div><div class="backup-count"><strong>${historyCount}</strong><small>Registros de preço</small></div><div class="backup-count"><strong>${profile.avatarImage?'Sim':'Não'}</strong><small>Foto de perfil</small></div></div><div class="backup-grid"><article class="backup-card"><h3>Exportar backup completo</h3><p>Baixa um arquivo JSON com suas plataformas e jogos, wishlist, perfil, acessórios e histórico de preços. A chave SteamGridDB fica de fora por segurança.</p><button type="button" class="primary" id="exportFullBackup">⇩ Exportar JSON</button></article><article class="backup-card"><h3>Restaurar backup</h3><p>Carrega um backup anterior e substitui os dados atuais deste navegador. Faça primeiro um backup novo caso queira voltar atrás.</p><label for="importBackupFile" class="secondary" style="display:inline-flex;cursor:pointer">Selecionar arquivo JSON</label><input id="importBackupFile" type="file" accept="application/json,.json" style="display:none"></article><article class="backup-card"><h3>Planilha da coleção</h3><p>Exporta os jogos e detalhes de colecionador em CSV, para abrir no Excel, LibreOffice ou Google Sheets.</p><button type="button" class="secondary" id="exportCollectionCsv">Exportar coleção CSV</button></article><article class="backup-card"><h3>Onde os dados ficam</h3><p>A Estante guarda os registros neste navegador. Não é sincronização em nuvem: guarde o backup em outra pasta ou unidade. Imagens da capa online podem continuar como links, não como arquivos incorporados.</p><button type="button" class="secondary" id="testStorage">Verificar espaço de armazenamento</button><div id="storageTestResult" class="utility-meta" role="status" style="margin-top:10px"></div></article></div><div class="retro-note" style="margin-top:16px"><span>✦</span>O backup não inclui a chave de API do SteamGridDB. Se usar outro navegador ou computador, configure a chave novamente nas preferências.</div>`;
+  $('#mainContent').innerHTML=`<div class="backup-summary"><div class="backup-count"><strong>${consoles.length}</strong><small>Plataformas</small></div><div class="backup-count"><strong>${gameCount}</strong><small>Jogos</small></div><div class="backup-count"><strong>${wishlist.length}</strong><small>Wishlist</small></div><div class="backup-count"><strong>${accessories.length}</strong><small>Acessórios</small></div><div class="backup-count"><strong>${historyCount}</strong><small>Registros de preço</small></div><div class="backup-count"><strong>${profile.avatarImage?'Sim':'Não'}</strong><small>Foto de perfil</small></div></div><div class="backup-grid"><article class="backup-card"><h3>Exportar backup completo</h3><p>Baixa um arquivo JSON com suas plataformas e jogos, wishlist, perfil, acessórios e histórico de preços. A chave SteamGridDB fica de fora por segurança.</p><button type="button" class="primary" id="exportFullBackup">⇩ Exportar JSON</button></article><article class="backup-card"><h3>Restaurar backup</h3><p>Carrega um backup anterior e substitui os dados atuais deste navegador. Faça primeiro um backup novo caso queira voltar atrás.</p><label for="importBackupFile" class="secondary" style="display:inline-flex;cursor:pointer">Selecionar arquivo JSON</label><input id="importBackupFile" type="file" accept="application/json,.json" style="display:none"></article><article class="backup-card"><h3>Planilha da coleção</h3><p>Exporta os jogos e detalhes de colecionador em CSV, para abrir no Excel, LibreOffice ou Google Sheets.</p><button type="button" class="secondary" id="exportCollectionCsv">Exportar coleção CSV</button></article><article class="backup-card"><h3>Onde os dados ficam</h3><p>A Estante guarda os registros neste navegador e pode sincronizá-los com sua conta da nuvem; guarde também um backup em outra pasta ou unidade. Imagens da capa online podem continuar como links, não como arquivos incorporados.</p><button type="button" class="secondary" id="testStorage">Verificar espaço de armazenamento</button><div id="storageTestResult" class="utility-meta" role="status" style="margin-top:10px"></div></article></div><div class="retro-note" style="margin-top:16px"><span>✦</span>O backup não inclui a chave de API do SteamGridDB. Se usar outro navegador ou computador, configure a chave novamente nas preferências.</div>`;
   $('#exportFullBackup').onclick=exportEstanteBackup;$('#exportCollectionCsv').onclick=exportEstanteCSV;
   $('#importBackupFile').onchange=e=>{const file=e.target.files?.[0];if(file)importEstanteBackup(file);e.target.value='';};
   $('#testStorage').onclick=()=>{const node=$('#storageTestResult');try{const key='estanteStorageTest';const chunk='x'.repeat(1024);let bytes=0;for(let i=0;i<1000;i++){try{localStorage.setItem(key,chunk.repeat(i+1));bytes=chunk.length*(i+1); }catch(e){break;}}localStorage.removeItem(key);node.textContent=bytes?`O navegador aceitou um teste temporário de aproximadamente ${(bytes/1024).toFixed(0)} KiB. Isso não mede o limite total nem garante espaço livre exato.`:'Não foi possível gravar um teste. Verifique as permissões e o espaço do navegador.';}catch(e){node.textContent='O navegador bloqueou o acesso ao armazenamento local.';}};
@@ -2402,14 +2460,14 @@ function openGeneralSettings(initialTab='appearance'){
   form.onsubmit=e=>e.preventDefault();
   document.querySelector('#modalTitle').textContent='Configurações gerais';
   form.innerHTML=`
-    <p class="general-settings-intro">Ajuste a aparência da Estante e conecte seus serviços. As chaves são guardadas apenas neste navegador; nunca use chaves secretas de servidor.</p>
+    <p class="general-settings-intro">Ajuste a aparência e as integrações disponíveis nesta instalação da Estante.</p>
     <div class="general-settings-tabs" role="tablist" aria-label="Seções das configurações"><button type="button" data-settings-tab="appearance" role="tab" aria-pressed="true">Interface e temas</button><button type="button" data-settings-tab="apis" role="tab" aria-pressed="false">APIs e integrações</button></div>
     <div class="settings-panel" data-settings-panel="appearance" role="tabpanel">
       <section class="settings-section"><h3>Aparência</h3><p>Escolha um tema para atualizar os painéis, a navegação, os botões e os formulários. As capas dos jogos permanecem iguais.</p><div class="theme-choice-grid">${themes.map(t=>`<button type="button" class="theme-choice" data-theme-choice="${t.id}" aria-pressed="${t.id===currentTheme?'true':'false'}"><span class="theme-swatches">${t.colors.map(c=>`<i style="background:${c}"></i>`).join('')}</span><span><strong>${t.name}</strong><small>${t.desc}</small></span></button>`).join('')}</div><div class="settings-status" id="generalThemeStatus" role="status">O tema selecionado é salvo automaticamente neste navegador.</div></section>
     </div>
     <div class="settings-panel" data-settings-panel="apis" role="tabpanel" hidden>
       <section class="settings-section" id="generalSgdbSection"><h3>SteamGridDB</h3><p>Use a chave para buscar jogos e escolher capas. Ela fica salva neste navegador e só é enviada nas chamadas à SteamGridDB.</p><div class="field"><label for="generalSgdbApiKey">Chave da API</label><input id="generalSgdbApiKey" type="password" autocomplete="off" spellcheck="false" placeholder="Cole sua chave pública da SteamGridDB" value="${esc(steamGridDbKey||'')}"></div><p><a href="https://www.steamgriddb.com/profile/preferences" target="_blank" rel="noopener noreferrer">Abrir preferências do SteamGridDB ↗</a></p><div class="settings-inline-actions"><button class="secondary" type="button" id="generalSgdbTest">Testar conexão</button><button class="secondary" type="button" id="generalSgdbRemove">Remover chave</button><button class="primary" type="button" id="generalSgdbSave">Salvar chave</button><span class="settings-status" id="generalSgdbStatus" role="status"></span></div></section>
-      <section class="settings-section" id="generalSupabaseSection"><h3>Supabase · nuvem entre dispositivos</h3><p>Conecte um projeto para entrar e sincronizar a coleção no computador e no celular. Use a URL do projeto e apenas a chave pública <em>anon</em>/<em>publishable</em>.</p><div class="field"><label for="generalCloudUrl">URL do projeto</label><input id="generalCloudUrl" type="url" autocomplete="url" placeholder="https://seu-projeto.supabase.co" value="${esc(cloudConfig.url||'')}"></div><div class="field"><label for="generalCloudAnon">Chave pública (anon / publishable)</label><input id="generalCloudAnon" type="password" autocomplete="off" placeholder="sb_publishable_... ou anon key" value="${esc(cloudConfig.anonKey||'')}"></div><div class="settings-inline-actions"><button class="primary" type="button" id="generalCloudSave">Salvar integração</button><span class="settings-status" id="generalCloudStatus" role="status">${cloudHasConfig()?'Projeto Supabase configurado neste navegador.':'Configure o projeto para habilitar a nuvem.'}</span></div><div class="settings-warning">Após salvar, use <strong>Nuvem e sincronização</strong> no menu do perfil para entrar ou criar uma conta. O projeto precisa da tabela <code>estante_cloud_data</code> com políticas RLS. Nunca use a chave <code>service_role</code> aqui.</div></section>
+      <section class="settings-section" id="generalSupabaseSection"><h3>Login e sincronização</h3><p>Use <strong>Nuvem e sincronização</strong> no menu do perfil para criar sua conta ou entrar. Este site já está conectado; não é necessário copiar chaves nem configurar um projeto.</p><div class="settings-inline-actions"><button class="primary" type="button" id="generalCloudOpen">Abrir login e sincronização</button><span class="settings-status">A coleção local continua disponível sem login.</span></div></section>
     </div>
     <div class="modal-actions"><button type="button" class="secondary" id="generalSettingsClose">Fechar</button></div>`;
   modal.classList.add('open');
@@ -2442,43 +2500,12 @@ function openGeneralSettings(initialTab='appearance'){
     catch(e){sgdbStatus.className='settings-status error';sgdbStatus.textContent=e?.message||'Falha ao conectar. Confira a chave e o auxiliar de API.';}
     finally{btn.disabled=false;}
   };
-  const cloudStatus=document.querySelector('#generalCloudStatus');
-  document.querySelector('#generalCloudSave').onclick=()=>{
-    try{
-      const stored=estanteStoreCloudConfig(document.querySelector('#generalCloudUrl').value,document.querySelector('#generalCloudAnon').value);
-      if(cloudStatus){cloudStatus.className='settings-status success';cloudStatus.textContent=stored?'Projeto Supabase configurado neste navegador.':'Configuração removida; a coleção local continua disponível.';}
-      toast(stored?'Integração Supabase salva':'Configuração da nuvem removida');
-      updateProfileMenuSummary();
-    }catch(e){if(cloudStatus){cloudStatus.className='settings-status error';cloudStatus.textContent=e?.message||'Não foi possível salvar a integração.';}}
-  };
+  document.querySelector('#generalCloudOpen').onclick=()=>{modal.classList.remove('open');openCloudPanel();};
   document.querySelector('#generalSettingsClose').onclick=()=>{modal.classList.remove('open');modal.querySelector('.modal')?.classList.remove('settings-modal');};
   chooseTab(initialTab==='apis'?'apis':'appearance');
 }
 function openThemeSettings(){openGeneralSettings('appearance')}
 function openSgdbSettings(){openGeneralSettings('apis')}
-function estanteStoreCloudConfig(urlValue,keyValue){
-  const nextConfig={url:String(urlValue||'').trim().replace(/\/+$/,''),anonKey:String(keyValue||'').trim()};
-  if(!nextConfig.url&&!nextConfig.anonKey){
-    if(cloudAuthSubscription){try{cloudAuthSubscription.unsubscribe()}catch(e){}cloudAuthSubscription=null;}
-    cloudAuthClient=null;cloudAuthClientKey='';cloudSession=null;
-    try{localStorage.removeItem(CLOUD_CONFIG_KEY);localStorage.removeItem(CLOUD_SESSION_KEY)}catch(e){}
-    cloudConfig=nextConfig;return false;
-  }
-  if(!nextConfig.url||!nextConfig.anonKey)throw new Error('Preencha a URL e a chave pública do Supabase.');
-  let parsed;try{parsed=new URL(nextConfig.url)}catch(e){throw new Error('A URL do Supabase não parece válida. Use o endereço HTTPS do projeto.');}
-  if(parsed.protocol!=='https:'&&!(parsed.protocol==='http:'&&['localhost','127.0.0.1'].includes(parsed.hostname)))throw new Error('Por segurança, use uma URL HTTPS do Supabase.');
-  const urlChanged=String(cloudConfig.url||'').trim().replace(/\/+$/,'')!==nextConfig.url;
-  const keyChanged=String(cloudConfig.anonKey||'').trim()!==nextConfig.anonKey;
-  if(urlChanged||keyChanged){
-    if(cloudAuthSubscription){try{cloudAuthSubscription.unsubscribe()}catch(e){}cloudAuthSubscription=null;}
-    cloudAuthClient=null;cloudAuthClientKey='';
-    if(urlChanged&&cloudConfig.url){cloudSession=null;try{localStorage.removeItem(CLOUD_SESSION_KEY)}catch(e){}}
-  }
-  cloudConfig=nextConfig;
-  try{localStorage.setItem(CLOUD_CONFIG_KEY,JSON.stringify(cloudConfig));}
-  catch(e){throw new Error('O navegador não permitiu guardar a configuração. Verifique as permissões de armazenamento.');}
-  return true;
-}
 function updateProfileMenuSummary(){
   organizeProfileMenu();
   const avatar=document.querySelector('#profileMenuAvatar');
@@ -2491,9 +2518,9 @@ function updateProfileMenuSummary(){
   if(name)name.textContent=String(profile?.nickname||profile?.displayName||'Minha coleção').trim()||'Minha coleção';
   const status=document.querySelector('#profileMenuCloudStatus');
   if(status){
-    if(cloudReady())status.textContent='Conectado: '+String(cloudSession?.user?.email||'conta ativa');
-    else if(cloudHasConfig())status.textContent='Supabase configurado · entre para sincronizar';
-    else status.textContent='Nuvem não configurada';
+    if(cloudSyncState==='conflict')status.textContent='Conflito: escolha uma versão';
+    else if(cloudReady())status.textContent='Conectado: '+String(cloudSession?.user?.email||'conta ativa');
+    else status.textContent='Coleção salva neste dispositivo';
   }
 }
 function organizeProfileMenu(){
