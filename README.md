@@ -25,6 +25,16 @@ O pacote inclui `netlify.toml` e `netlify/functions/steamgriddb.js`. Publique a 
 
 O HTML carrega o SDK do Supabase por CDN, portanto o login exige internet. A configuração pública do projeto Supabase é mantida pelo site; visitantes não precisam criar um projeto nem copiar chaves.
 
+## Compartilhar e importar
+
+O perfil e a wishlist podem gerar links públicos de visualização. Cada link contém uma cópia compactada dos dados no fragmento da URL; não é armazenado no servidor, não expira e pode ser encaminhado por quem o recebe. O compartilhamento omite notas e valores pagos; imagens enviadas do dispositivo também não entram no link.
+
+
+## Compartilhar e importar
+
+O perfil e a wishlist podem gerar links públicos de visualização. Cada link contém uma cópia compactada dos dados no fragmento da URL; não é armazenado no servidor, não expira e pode ser encaminhado por quem o recebe. O compartilhamento omite notas e valores pagos; imagens enviadas do dispositivo também não entram no link.
+
+
 ## Nuvem entre computador e celular
 
 Abra o avatar → **Nuvem e sincronização** para criar uma conta com e-mail e senha ou entrar com a mesma conta em cada dispositivo. Não é preciso obter chaves, criar um projeto Supabase ou configurar integrações. Sem login, a coleção continua salva localmente no navegador.
