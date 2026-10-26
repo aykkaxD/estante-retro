@@ -33,7 +33,14 @@ Na primeira comparação, se os dados locais e da nuvem forem diferentes, a Esta
 
 ## Conteúdo do pacote
 
-- `index.html` — site completo e funcional.
+- `index.html` — estrutura da página e carregamento dos módulos do site.
+- `styles.css` — estilos da interface.
+- `js/domain.js` — status, valores, conversão de dados antigos e regras de aquisição.
+- `js/state.js` — estado compartilhado, carregamento/salvamento local e chaves por perfil.
+- `js/wishlist.js` — lista de desejos, ofertas e editor da wishlist.
+- `js/cloud.js` — login, sincronização, resolução de conflitos e dados em nuvem.
+- `js/app.js` — biblioteca principal, fichas, SteamGridDB e temas.
+- `js/tools.js`, `js/profiles.js`, `js/plus.js` e `js/settings-controller.js` — acessórios e backups, perfis, recursos adicionais e controles de configurações.
 - `api-server.js` e `INICIAR_STEAMGRIDDB.bat` — auxiliar local SteamGridDB.
 - `netlify/functions/steamgriddb.js` e `netlify.toml` — função para hospedagem Netlify.
 - `corrigir_estante_cloud.sql` — estrutura RLS para sincronização Supabase.
